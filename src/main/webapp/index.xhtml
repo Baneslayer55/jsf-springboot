@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      lang="en">
+<h:head>
+    <title>Ekaterina Ivanova (under construction)</title>
+    <h:outputStylesheet library="css" name="table-style.css"/>
+    <h:outputStylesheet library="css" name="lightbox.css"/>
+    <h:outputStylesheet library="css" name="demo.css"/>
+    <h:outputStylesheet library="css" name="style.css"/>
+
+    <h:outputScript library="js" name="lightbox.js"/>
+    <h:outputScript library="primefaces" name="jquery/jquery.js" target="head"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <meta name="description" content="software development"/>
+    <meta name="keywords" content="software development"/>
+    <meta name="author" content="Ekaterina Ivanova"/>
+
+</h:head>
+<h:body>
+    <div class="hero-wrapper">
+        <div class="hero">
+            <figure>
+                <video autoplay="true" muted="true" loop="true" id="myVideo">
+                    <source src="dist/background.mp4" type="video/mp4"></source>
+                    Your browser does not support HTML5 video.
+                </video>
+            </figure>
+        </div>
+    </div>
+
+    <div class="parallax-wraper">
+        <div class="navigation">
+            <!--                <h1>МЕНЮ И НАВИГАЦИЯ</h1>-->
+            <h:form style="text-align: right;">
+
+                <h:commandButton action="#{main.setLocale('ru_RU')}"
+                                 value="RUSSIAN" image="dist/images/ru32x32.png" style="color: white;"/>&nbsp;
+                <h:commandButton action="#{main.setLocale('en')}"
+                                 value="ENGLISH" image="dist/images/us32x32.png" style="color: white;"/>
+
+            </h:form>
+        </div>
+
+        <div class="parallax">
+
+            <div class="main1">
+
+                <h:form>
+                    <h3><h:outputText value="#{msg['greeting']}"/></h3>
+                    <h:outputText value="#{msg['intro.text']}"/>
+
+                </h:form>
+                <h:form class="sendform1">
+
+                    <br/><p><span class="p2"><a href="mom/web/index.html">#{msg['moms.art']}</a></span></p><br/>
+                    <br/>#{msg['samples']}:<br/>
+                    <span class="p2"><a
+                            href="https://bitbucket.org/iva-nova-e-katerina/allinone/src/master/src/">#{msg['allinone']}</a></span><br/>
+                    <span class="p2"><a
+                            href="https://bitbucket.org/iva-nova-e-katerina/allinone/src/master/com/iceja/">#{msg['3dmod']}</a></span><br/>
+                    <span class="p2"><a
+                            href="https://bitbucket.org/iva-nova-e-katerina/insurance-test">#{msg['insurancetest']}</a></span><br/>
+                    <span class="p2"><a
+                            href="https://bitbucket.org/iva-nova-e-katerina/allinone/src/master/chatserver_v3/">#{msg['chatserver']}</a></span><br/>
+                    <span class="p2"><a
+                            href="https://github.com/iva-nova-e-katerina/AllSamples/tree/numbertowords">#{msg['numtowords']}</a></span><br/>
+                    <span class="p2"><a
+                            href="https://github.com/iva-nova-e-katerina/AllSamples/tree/numbertowords">#{msg['iceja.sources']}</a></span><br/>
+
+
+                    <br/><span class="p2"><a href="#{msg['resume.link']}">#{msg['resume']}</a></span><br/>
+                    <!--a href="dist/images/SCAN0004.JPG" data-lightbox="roadtrip">#{msg['diploma']} 1</a>
+                    <a href="dist/images/SCAN0001.JPG" data-lightbox="roadtrip"> 2</a>
+                    <a href="dist/images/SCAN0003.JPG" data-lightbox="roadtrip"> 3</a>
+                    <a href="dist/images/SCAN0002.JPG" data-lightbox="roadtrip"> 4</a-->
+                    <br/>
+                    <br/>
+                    <br/>
+                    #{msg['talk.to.me']}
+                    <br/>
+                    <!--                        #{msg['sender']}<span><h:inputText value="#{main.sender}"></h:inputText></span><br/>-->
+                    <!--                        &lt;!&ndash; #{msg['topic']}<h:inputText value=""><br/&ndash;&gt;-->
+                    <!--                        <br/>-->
+
+
+                    #{msg['sender']}<p:inputText id="email" required="true" label="email" size="13"
+                                                 requiredMessage="#{msg['please.enter']}"
+                                                 validatorMessage="#{msg['invalid.email']}"
+                                                 value="#{main.sender}">
+
+                    <f:validateRegex
+                            pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$"/>
+
+                </p:inputText>
+                    <p:watermark for="email" value="#{msg['email.address']} *"/>
+                    <p:message for="email"/>
+                    <!--                        <br/>-->
+                    <h:inputTextarea value="#{main.message}" cols="80" rows="18" class="almost1001"/>
+                    <br/>
+                    <h:commandButton value="#{msg['send.button']}" action="#{main.sendmessage()}"></h:commandButton>
+                </h:form>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div>
+                #{msg['contacts']}:
+            </div>
+            <div>
+                skype: jewelope, telegram: @iceja, jabber: iceja13@xmpp.jp <br/>
+                <a href="https://www.facebook.com/soft600">me @ facebook, </a>&nbsp;<a
+                    href="https://www.vk.com/sw_development">me @ vk.com, </a>&nbsp;<a
+                    href="https://www.twitter.com/iceja13">me @ twitter</a><br/>
+                tox: 529918DEB8DA36449538EEDE2AECD056C20DED5EC0CAE1692D52893960903C6BA7C65FD04BF3
+            </div>
+        </div>
+    </div>
+<!--    <div class="basement">&bnsp;</div>-->
+
+
+
+</h:body>
+<script type="application/javascript">
+    function ValidateEmail(mail) {
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.emailAddr.value)) {
+            return (true)
+        }
+        alert("You have entered an invalid email address!")
+        return (false)
+    }
+</script>
+</html>
